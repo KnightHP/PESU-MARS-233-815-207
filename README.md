@@ -31,6 +31,9 @@ BallDetection_Project/
 ├── worlds/
 │ └── BallDetection1.wbt
 ├── README.md
+---
+
+The structure has been formatted properly with the correct nested hierarchy showing all directories and files.
 
 ## How It Works
 
