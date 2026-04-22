@@ -1,0 +1,87 @@
+#VRML_SIM R2025a utf8
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+  title "Ball Detection World"
+  basicTimeStep 32
+}
+
+Viewpoint {
+  orientation 1 0 0 -0.2
+  position 0 0.5 1
+}
+
+Background {
+  skyColor 0.4 0.7 1
+}
+
+DirectionalLight {
+  direction -1 -1 -1
+}
+
+DEF FLOOR Solid {
+  translation 0 0 0
+  name "floor"
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.8 0.8 0.8
+        }
+      }
+      geometry Box {
+        size 2 0.01 2
+      }
+    }
+  ]
+  boundingObject Box {
+    size 2 0.01 2
+  }
+}
+
+DEF ROBOT E-puck {
+  translation 0 0 0
+  rotation 0 1 0 0
+  supervisor TRUE
+  controller "ball_detector"
+}
+
+DEF RED_BALL Solid {
+  translation 0.5 0.05 0
+  name "red_ball"
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+        }
+      }
+      geometry Sphere {
+        radius 0.05
+      }
+    }
+  ]
+  boundingObject Sphere {
+    radius 0.05
+  }
+}
+
+DEF GREEN_BALL Solid {
+  translation -0.5 0.05 0
+  name "green_ball"
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 1 0
+        }
+      }
+      geometry Sphere {
+        radius 0.05
+      }
+    }
+  ]
+  boundingObject Sphere {
+    radius 0.05
+  }
+}
